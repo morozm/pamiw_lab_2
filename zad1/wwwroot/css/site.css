@@ -1,0 +1,92 @@
+html {
+    font-size: 14px;
+    position: relative;
+    min-height: 100%;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0; /* T³o ca³ej strony */
+    margin: 0;
+    padding: 20px; /* Dodaje ogólne paddingi */
+    overflow-x: hidden; /* Ukrywa poziome suwakowanie */
+}
+
+.container-quotes {
+    margin: auto;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    color: #333;  Ustaw kolor nag³ówka 
+}
+
+h2 {
+    text-align: center;
+    color: #555;  Ustaw kolor podtytu³u 
+}
+
+.input-field {
+    width: calc(100% - 20px);  Szerokoœæ pól wejœciowych 
+    padding: 10px;
+    margin: 10px 0;  Odstêpy góra/dó³ 
+    border: 1px solid #ccc;  Kolor ramki 
+    border-radius: 4px;  Zaokr¹glenie rogów pól 
+    box-sizing: border-box;  Dodaj padding do ca³kowitej szerokoœci 
+}
+
+.add-button {
+    width: 100%;  Przyciski zajmuj¹ ca³¹ szerokoœæ 
+    padding: 10px;
+    background: #007bff;  Kolor t³a przycisku 
+    color: white;  Kolor tekstu 
+    border: none;  Usuwa domyœln¹ ramkê 
+    border-radius: 4px;  Zaokr¹glenie rogów przycisku 
+    cursor: pointer;  Kursor zmienia siê na wskaŸnik 
+    margin-top: 10px;  Dodaje odstêp nad przyciskiem 
+}
+
+.add-button:hover {
+    background: #0056b3;  Mroczniejszy kolor przy najechaniu 
+}
+
+.quote-list {
+    list-style-type: none;  Usuwa punkty listy 
+    padding: 0;  Usuwa domyœlne padding 
+}
+
+.quote-list li {
+    padding: 10px;  Odstêp wewnêtrzny dla elementu listy 
+    border-bottom: 1px solid #ccc;  Dolna ramka dla elementu listy 
+    display: flex;  U¿ywa flexboxa do lepszego u³o¿enia elementów 
+    justify-content: space-between;  Rozk³ada elementy w liœcie 
+    align-items: center;  Centruje elementy w pionie 
+}
+
+.quote-list li button {
+    background: red;  Kolor t³a przycisku usuwania 
+    color: white;  Kolor tekstu 
+    border: none;  Usuwa domyœln¹ ramkê 
+    padding: 5px;  Odstêp wewnêtrzny 
+    border-radius: 4px;  Zaokr¹glenie rogów przycisku 
+    cursor: pointer;  Kursor zmienia siê na wskaŸnik 
+    margin-left: 10px;  Odstêp miêdzy przyciskami 
+}
+
+.quote-list li button.edit {
+    background: orange;  Kolor t³a przycisku edytowania 
+}

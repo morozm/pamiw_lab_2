@@ -1,0 +1,44 @@
+﻿@model zad1.Models.CalculatorModel
+
+@{
+    ViewBag.Title = "Kalkulator";
+}
+
+<h2>Kalkulator - Dodaj dwie liczby</h2>
+
+<div>
+    @using (Html.BeginForm("Index", "Calculator", FormMethod.Post))
+    {
+        <div class="form-group">
+            @Html.LabelFor(m => m.Number1, "Pierwsza liczba")
+            @Html.TextBoxFor(m => m.Number1, new { @class = "form-control", type = "number", step = "any" })
+            @Html.ValidationMessageFor(m => m.Number1, "", new { @class = "text-danger" })
+        </div>
+
+        <br />
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Number2, "Druga liczba")
+            @Html.TextBoxFor(m => m.Number2, new { @class = "form-control", type = "number", step = "any" })
+            @Html.ValidationMessageFor(m => m.Number2, "", new { @class = "text-danger" })
+        </div>
+
+        <br />
+
+        <button type="submit" class="btn btn-primary">Dodaj</button>
+    }
+
+    @if (Model?.Result.HasValue == true)
+    {
+        <div class="alert alert-success mt-3">
+            <h3>Wynik: @Model.Result</h3>
+        </div>
+    }
+
+</div>
+
+@section Scripts {
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.19.3/jquery.validate.min.js"></script>
+}
+

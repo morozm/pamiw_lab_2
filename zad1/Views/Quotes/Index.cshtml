@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = "Ulubione Cytaty";
+}
+
+<link rel="stylesheet" href="~/css/site.css" />
+<script src="~/js/script.js" defer></script>
+
+<div class="container-quotes">
+    <h1>@ViewData["Title"]</h1>
+
+    <form id="quoteForm">
+        <input type="text" id="quoteInput" placeholder="Wpisz cytat..." required class="input-field">
+        <br>
+        <input type="text" id="authorInput" placeholder="Wpisz autora..." required class="input-field">
+        <br>
+        <button type="button" id="addQuote" class="add-button">Dodaj cytat</button>
+    </form>
+
+    <h2>Lista Cytatów</h2>
+    <ul id="quoteList" class="quote-list"></ul>
+</div>

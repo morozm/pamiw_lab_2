@@ -1,0 +1,45 @@
+﻿@model List<zad1.Models.TodoItem>
+
+<h2>Lista TODO</h2>
+
+<form asp-action="Add" method="post">
+    <div class="form-group">
+        <input type="text" name="task" class="form-control" placeholder="Wprowadź nowe zadanie" required />
+    </div>
+    <button type="submit" class="btn btn-primary mt-2">Dodaj</button>
+</form>
+
+<table class="table mt-4">
+    <thead>
+        <tr>
+            <th>Zadanie</th>
+            <th>Status</th>
+            <th>Akcje</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Task</td>
+                <td>
+                    @if (item.IsCompleted)
+                    {
+                        <span class="badge bg-success">Ukończone</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-warning">W toku</span>
+                    }
+                </td>
+                <td>
+                    @if (!item.IsCompleted)
+                    {
+                        <a asp-action="Complete" asp-route-id="@item.Id" class="btn btn-sm btn-success">Oznacz jako ukończone</a>
+                    }
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">Usuń</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
